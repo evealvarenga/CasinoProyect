@@ -41,7 +41,6 @@ public class Persona {
 	public void setMail(String mail) {this.mail = mail;}
 	public void setContrasena(String contrasena) {this.contrasena = contrasena;}
 	
-	
 	//FUNCIONES
 	
 	
