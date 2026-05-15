@@ -1,10 +1,14 @@
 package casino;
 
 public class Main {
+	
+	// Colocar listas aquí más adelante
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public static void main(String[] args) {	
+		Seed.cargarEmpleados();
+		Seed.cargarUsuarios();
+		
+		//Inicio del programa
 	}
 
 }
