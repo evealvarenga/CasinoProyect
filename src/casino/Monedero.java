@@ -5,6 +5,7 @@ public class Monedero {
 	private Double valorFicha;
 	private Double fichaEfectivo;
 	private Double efectivoFicha;
+	private double saldototal;
 	
 	
 	public Monedero(Double valorFicha,Double fichaEfectivo,Double efectivoFicha) {
@@ -16,7 +17,9 @@ public class Monedero {
 	public Double getValorFicha() {return valorFicha;}
 	public void setValorFicha(Double valorFicha) {this.valorFicha = valorFicha;}
 	public Double getFichaEfectivo() {return fichaEfectivo;}
+	public double getSaldototal() {return saldototal;}
 
+	public void setSaldototal(double saldototal) {this.saldototal = saldototal;}
 	public void setFichaEfectivo(Double fichaEfectivo) {this.fichaEfectivo = fichaEfectivo;}
 	public Double getEfectivoFicha() {return efectivoFicha;}
 	public void setEfectivoFicha(Double efectivoFicha) {this.efectivoFicha = efectivoFicha;}
