@@ -1,5 +1,7 @@
 package casino;
 
+import javax.swing.JOptionPane;
+
 public class Monedero {
 	
 	private Double valorFicha;
@@ -27,6 +29,12 @@ public class Monedero {
 	public void setEfectivoFicha(Double efectivoFicha) {this.efectivoFicha = efectivoFicha;}
 	
 	// FUNCIONES
+	
+	public void mostrarSaldoTotal() {
+		//Función para mostrar el saldo total de efectivo que tiene actualmente el casino.
+		
+		JOptionPane.showMessageDialog(null, "El saldo total actual es de: $" + saldototal );
+	}
 	
 	
 	

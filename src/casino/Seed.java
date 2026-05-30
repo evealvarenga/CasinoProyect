@@ -25,8 +25,8 @@ public class Seed {
 		listaGerentes.add(new Gerente(345678912, "Juan Pérez", "Calle Falsa 123", 11223344, "juan@gmail.com"));
 	}
 	
-	public static void cargarBanca(ArrayList <Monedero> banca) {
-		banca.add(new Monedero(100.20,3000.20,200.10, 127361872386.20));
+	public static Monedero cargarBanca() {
+	    return new Monedero(100.20, 3000.20, 200.10, 127361872386.20);
 	}
 
 }

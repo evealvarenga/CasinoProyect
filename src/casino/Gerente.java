@@ -21,7 +21,7 @@ public class Gerente extends Persona {
 		
 	}
 	
-	public void verificarGanacias() {
-		
+	public void verificarGanacias(Monedero banca) {
+		banca.mostrarSaldoTotal();
 	}
 }

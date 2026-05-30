@@ -12,12 +12,14 @@ public class Main {
 		Seed.cargarEmpleados(listaEmpleados);
 		Seed.cargarClientes(listaCliente);
 		Seed.cargarGerente(listaGerente);
+		
 	
 		//Inicio del programa
-		JOptionPane.showMessageDialog(null, "------------Bienvenido al casino ---------");
+		JOptionPane.showMessageDialog(null, "------------ Bienvenido al casino ---------");
 		validacionUsuario();
 	}	
 		public static void validacionUsuario() {
+			Monedero banco = Seed.cargarBanca();
 			Integer documento = 0;
 			do {
 				documento = Funciones.validarNumero("documento");
@@ -28,6 +30,7 @@ public class Main {
 			        	clienteEncontrado = d;
 			            JOptionPane.showMessageDialog(null, "¡Bienvenido, " + clienteEncontrado.getNombreCompleto() + "!");
 			            interfazCliente(clienteEncontrado);
+			            return;
 			        }
 			    }
 			    Empleado empleadoEncontrado = null;
@@ -36,6 +39,7 @@ public class Main {
 			        	empleadoEncontrado = d;
 			            JOptionPane.showMessageDialog(null, "¡Bienvenido, " + empleadoEncontrado.getNombreCompleto() + "!");
 			            interfazEmpleado(empleadoEncontrado);
+			            return;
 			        }
 			    }
 			    
@@ -44,11 +48,12 @@ public class Main {
 			        if (d.getDni() == documento) {
 			        	gerenteEncontrado = d;
 			            JOptionPane.showMessageDialog(null, "¡Bienvenido, " + gerenteEncontrado.getNombreCompleto() + "!");
-			            interfazGerente(gerenteEncontrado);
+			            interfazGerente(gerenteEncontrado, banco);
+			            return;
 			        }
 			    }
 				nuevoCliente(documento);
-			} while (documento == 0);	
+			} while (documento == 0 || documento == null);	
 		}
 		
 		public static void nuevoCliente(Integer documento) {
@@ -64,6 +69,7 @@ public class Main {
 		
 		public static void interfazCliente(Cliente cliente) {
 			JOptionPane.showMessageDialog(null, "Interfaz Cliente");
+			
 			return;
 		}
 		
@@ -72,8 +78,23 @@ public class Main {
 			return;
 		}
 		
-		public static void interfazGerente(Gerente gerente) {
-			JOptionPane.showMessageDialog(null, "Interfaz Gerente");
+		public static void interfazGerente(Gerente gerente, Monedero banco) {
+			String[] opciones0 = {"Registrar nuevo empleado", "Verificar ganancias del Banco", "Salir"};
+			int eleccion0;
+			do {
+				eleccion0 = JOptionPane.showOptionDialog(null, "Ingresó como Gerente.\nSeleccione una operación", "Casino",
+	                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,
+	                    null, opciones0, opciones0[0]
+	            );
+	            switch (eleccion0) {
+	                //case 0: generarEmpleado(); break;
+	                case 1: gerente.verificarGanacias(banco); return;
+	            }
+			} while (eleccion0 != 2 && eleccion0 != -1);
+		
+			/*public static void generarEmpleado() {
+				JOptionPane.showInputDialog("Ingresa el número de DNI");
+			};*/
 			return;
 			
 		}
