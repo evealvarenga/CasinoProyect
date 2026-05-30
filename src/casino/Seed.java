@@ -26,7 +26,7 @@ public class Seed {
 	}
 	
 	public static Monedero cargarBanca() {
-	    return new Monedero(100.20, 3000.20, 200.10, 127361872386.20);
+	    return new Monedero(100.20, 127361872386.20);
 	}
 
 }
