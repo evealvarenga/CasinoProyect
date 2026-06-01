@@ -133,7 +133,7 @@ public class Main {
 			case "Adivina la carta más alta": juegoAdivina(cliente);break;
 			case "Ruleta": juegoRuleta();break;
 			case "Tragamonedas": juegoTragamonedas(); break;
-			case "Dados": juegoDados(); break;
+			case "Dados": juegoDados(cliente); break;
 			}
 		};
 		
@@ -142,7 +142,7 @@ public class Main {
 			Adivina juego = new Adivina();
 
 			if (Funciones.puedeJugar(cliente, juego)) {
-			    juego.jugar(cliente,100);
+			    juego.jugar(cliente);
 			}
 			else {
 			    JOptionPane.showMessageDialog(null,
@@ -151,7 +151,17 @@ public class Main {
 		}
 		public static void juegoRuleta() {}
 		public static void juegoTragamonedas() {}
-		public static void juegoDados() {}
+		public static void juegoDados(Cliente cliente) {
+			Dados juego = new Dados();
+
+			if (Funciones.puedeJugar(cliente, juego)) {
+			    juego.jugar(cliente);
+			}
+			else {
+			    JOptionPane.showMessageDialog(null,
+			            "No posee fichas suficientes para jugar.");
+			}
+		}
 		
 	
 

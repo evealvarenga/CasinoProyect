@@ -22,13 +22,11 @@ public class Monedero {
 	// FUNCIONES
 	
 	public void mostrarSaldoTotal() {
-		//Función para mostrar el saldo total de efectivo que tiene actualmente el casino.
-		
 		JOptionPane.showMessageDialog(null, "El saldo total actual es de: $" + saldototal );
 	}
 	
 	public double compraFichas(double importe) {
-	    double fichasCompradas = importe / valorFicha;
+	    int fichasCompradas = (int) Math.round(importe / valorFicha);
 	    saldototal += importe;
 	    return fichasCompradas;
 	}
